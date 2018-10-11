@@ -1,0 +1,6 @@
+Dynamic\Elements\FileList\Elements\ElementFileList:
+  one:
+    Title: "File List"
+Dynamic\Elements\FileList\Model\FileListObject:
+  one:
+    Title: "File One"
