@@ -9,7 +9,7 @@
         }
     ],
     "keywords": [
-        "silverstripe"
+        "silverstripe", "elemental", "file"
     ],
     "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
