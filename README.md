@@ -1,19 +1,21 @@
-# silverstripe-elemental-filelist
+# Silverstripe Elemental FileList
 
-a multi file block for SilverStripe Elemental
+A multi file block for SilverStripe Elemental.
 
 ## Requirements
 
-- SilverStripe 3.2
+- SilverStripe ^4.0
+- SilverStripe Elemental ^2.0
 
 ## Installation
 
-This is how you install silverstripe-elemental-filelist.
+`composer require dynamic/silverstripe-elemental-filelist`
 
-## Example usage
+## Usage
 
-You use silverstripe-elemental-filelist like this.
+Elemental FileList Block will add the following Element to your site:
 
-## Documentation
+* FileList
 
-See the [docs/en](docs/en/index.md) folder.
+The FileList Element will display a list of files for download. 
+
