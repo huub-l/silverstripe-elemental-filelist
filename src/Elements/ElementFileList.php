@@ -4,9 +4,15 @@ namespace Dynamic\Elements\FileList\Elements;
 
 use DNADesign\Elemental\Models\BaseElement;
 use Dynamic\Elements\FileList\Model\FileListObject;
+use SilverStripe\ORM\FieldType\DBField;
 
 class ElementFileList extends BaseElement
 {
+    /**
+     * @var string
+     */
+    private static $icon = 'font-icon-block-file-list';
+
     /**
      * @var string
      */
@@ -37,11 +43,35 @@ class ElementFileList extends BaseElement
     ];
 
     /**
+     * Set to false to prevent an in-line edit form from showing in an elemental area. Instead the element will be
+     * clickable and a GridFieldDetailForm will be used.
+     *
+     * @config
+     * @var bool
+     */
+    private static $inline_editable = false;
+
+    /**
      * @return DBHTMLText
      */
-    public function ElementSummary()
+    public function getSummary()
     {
-        return DBField::create_field('HTMLText', '<p>File List</p>')->Summary(20);
+        if ($this->Files()->count() == 1) {
+            $label = ' file';
+        } else {
+            $label = ' files';
+        }
+        return DBField::create_field('HTMLText', $this->Files()->count() . $label)->Summary(20);
+    }
+
+    /**
+     * @return array
+     */
+    protected function provideBlockSchema()
+    {
+        $blockSchema = parent::provideBlockSchema();
+        $blockSchema['content'] = $this->getSummary();
+        return $blockSchema;
     }
 
     /**
