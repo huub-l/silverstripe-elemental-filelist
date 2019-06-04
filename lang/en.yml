@@ -1,0 +1,17 @@
+en:
+  Dynamic\Elements\FileList\Elements\ElementFileList:
+    FilesLabel: 'Files'
+    PLURALNAME: 'File List Elements'
+    PLURALS:
+      one: 'A File List'
+      other: '{count} File Lists'
+    SINGULARNAME: 'File List Element'
+  Dynamic\Elements\FileList\Model\FileListObject:
+    FileLabel: 'File'
+    FileNameLabel: 'File'
+    PLURALNAME: 'Files'
+    PLURALS:
+      one: 'A File'
+      other: '{count} Files'
+    SINGULARNAME: 'File'
+    TitleLabel: 'Title'

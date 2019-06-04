@@ -34,6 +34,12 @@ Elemental FileList Block will add the following Element to your site:
 
 The FileList Element will display a list of files for download. 
 
+## Translations
+
+The translations for this project are managed via [Transifex](https://www.transifex.com/dynamicagency/silverstripe-elemental-filelist/)
+and are updated automatically during the release process. To contribute, please head to the link above and get
+translating!
+
 ## Maintainers
 
  *  [Dynamic](http://www.dynamicagency.com) (<dev@dynamicagency.com>)

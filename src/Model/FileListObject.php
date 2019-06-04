@@ -46,9 +46,24 @@ class FileListObject extends DataObject
      * @var array
      */
     private static $summary_fields = [
-        'File.Name' => 'File',
+        'File.Name',
         'Title',
     ];
+
+    /**
+     * @param bool $includerelations
+     * @return array
+     */
+    public function fieldLabels($includerelations = true)
+    {
+        $labels = parent::fieldLabels($includerelations);
+
+        $labels['Title'] = _t(__CLASS__.'.TitleLabel', 'Title');
+        $labels['File.Name'] = _t(__CLASS__.'.FileNameLabel', 'File');
+        $labels['File'] = _t(__CLASS__.'.FileLabel', 'File');
+
+        return $labels;
+    }
 
     /**
      * @var string
@@ -61,6 +76,9 @@ class FileListObject extends DataObject
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
+
+        $fields->dataFieldByName('File')
+            ->setTitle($this->fieldLabel('File'));
 
         $fields->removeByName([
             'FileListID',

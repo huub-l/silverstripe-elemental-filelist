@@ -21,16 +21,6 @@ class ElementFileList extends BaseElement
     /**
      * @var string
      */
-    private static $singular_name = 'File List Element';
-
-    /**
-     * @var string
-     */
-    private static $plural_name = 'File List Elements';
-
-    /**
-     * @var string
-     */
     private static $table_name = 'ElementFileList';
 
     /**
@@ -51,6 +41,19 @@ class ElementFileList extends BaseElement
      * @var bool
      */
     private static $inline_editable = false;
+
+    /**
+     * @param bool $includerelations
+     * @return array
+     */
+    public function fieldLabels($includerelations = true)
+    {
+        $labels = parent::fieldLabels($includerelations);
+
+        $labels['Files'] = _t(__CLASS__.'.FilesLabel', 'Files');
+
+        return $labels;
+    }
 
     /**
      * @return FieldList
