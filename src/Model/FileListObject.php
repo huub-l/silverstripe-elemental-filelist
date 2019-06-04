@@ -78,7 +78,8 @@ class FileListObject extends DataObject
         $fields = parent::getCMSFields();
 
         $fields->dataFieldByName('File')
-            ->setTitle($this->fieldLabel('File'));
+            ->setTitle($this->fieldLabel('File'))
+            ->setFolderName('Uploads/Elements/FileList/');
 
         $fields->removeByName([
             'FileListID',

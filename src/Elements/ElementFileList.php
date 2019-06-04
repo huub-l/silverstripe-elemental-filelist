@@ -79,7 +79,7 @@ class ElementFileList extends BaseElement
                         new BulkUploader()
                     ]);
                     $config->getComponentByType(BulkUploader::class)
-                        ->setUfSetup('setFolderName', 'Uploads/FileList');
+                        ->setUfSetup('setFolderName', 'Uploads/Elements/FileList/');
                 }
                 $fields->addFieldToTab('Root.Main', $field);
             }
