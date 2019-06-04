@@ -5,6 +5,7 @@ namespace Dynamic\Elements\FileList\Model;
 use Dynamic\Elements\FileList\Elements\ElementFileList;
 use SilverStripe\Assets\File;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\Security\Permission;
 
 class FileListObject extends DataObject
 {
@@ -67,5 +68,89 @@ class FileListObject extends DataObject
         ]);
 
         return $fields;
+    }
+
+    /**
+     * Basic permissions, defaults to page perms where possible.
+     *
+     * @param \SilverStripe\Security\Member|null $member
+     * @return boolean
+     */
+    public function canView($member = null)
+    {
+        $extended = $this->extendedCan(__FUNCTION__, $member);
+        if ($extended !== null) {
+            return $extended;
+        }
+
+        if ($page = $this->FileList()->getPage()) {
+            return $page->canView($member);
+        }
+
+        return Permission::check('CMS_ACCESS', 'any', $member);
+    }
+
+    /**
+     * Basic permissions, defaults to page perms where possible.
+     *
+     * @param \SilverStripe\Security\Member|null $member
+     *
+     * @return boolean
+     */
+    public function canEdit($member = null)
+    {
+        $extended = $this->extendedCan(__FUNCTION__, $member);
+        if ($extended !== null) {
+            return $extended;
+        }
+
+        if ($page = $this->FileList()->getPage()) {
+            return $page->canEdit($member);
+        }
+
+        return Permission::check('CMS_ACCESS', 'any', $member);
+    }
+
+    /**
+     * Basic permissions, defaults to page perms where possible.
+     *
+     * Uses archive not delete so that current stage is respected i.e if a
+     * element is not published, then it can be deleted by someone who doesn't
+     * have publishing permissions.
+     *
+     * @param \SilverStripe\Security\Member|null $member
+     *
+     * @return boolean
+     */
+    public function canDelete($member = null)
+    {
+        $extended = $this->extendedCan(__FUNCTION__, $member);
+        if ($extended !== null) {
+            return $extended;
+        }
+
+        if ($page = $this->FileList()->getPage()) {
+            return $page->canArchive($member);
+        }
+
+        return Permission::check('CMS_ACCESS', 'any', $member);
+    }
+
+    /**
+     * Basic permissions, defaults to page perms where possible.
+     *
+     * @param \SilverStripe\Security\Member|null $member
+     * @param array $context
+     *
+     * @return boolean
+     */
+    public function canCreate($member = null, $context = array())
+    {
+        $extended = $this->extendedCan(__FUNCTION__, $member);
+        if ($extended !== null) {
+            return $extended;
+        }
+
+        return Permission::check('CMS_ACCESS', 'any', $member);
     }
 }
