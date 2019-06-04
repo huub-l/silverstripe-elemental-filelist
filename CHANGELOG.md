@@ -1,6 +1,29 @@
 # Change Log
 
-## [2.0.1](https://github.com/dynamic/silverstripe-elemental-filelist/tree/2.0.1) (2019-03-20)
+## [2.0.2](https://github.com/dynamic/silverstripe-elemental-filelist/tree/2.0.2) (2019-06-03)
+[Full Changelog](https://github.com/dynamic/silverstripe-elemental-filelist/compare/2.0.1...2.0.2)
+
+**Implemented enhancements:**
+
+- BUG - set FolderName for File field [\#16](https://github.com/dynamic/silverstripe-elemental-filelist/issues/16)
+- initial i18n support [\#13](https://github.com/dynamic/silverstripe-elemental-filelist/issues/13)
+- Enhancement: Use Bulk Uploader [\#5](https://github.com/dynamic/silverstripe-elemental-filelist/issues/5)
+
+**Fixed bugs:**
+
+- BUG - set FolderName for File field [\#16](https://github.com/dynamic/silverstripe-elemental-filelist/issues/16)
+- BUG missing CRUD permissions [\#6](https://github.com/dynamic/silverstripe-elemental-filelist/issues/6)
+
+**Merged pull requests:**
+
+- bugfix - set folder name for File field [\#17](https://github.com/dynamic/silverstripe-elemental-filelist/pull/17) ([jsirish](https://github.com/jsirish))
+- initial i18n implementation [\#15](https://github.com/dynamic/silverstripe-elemental-filelist/pull/15) ([jsirish](https://github.com/jsirish))
+- FileListObject - add can\* checks for permissions [\#12](https://github.com/dynamic/silverstripe-elemental-filelist/pull/12) ([jsirish](https://github.com/jsirish))
+- update docs and guidelines [\#11](https://github.com/dynamic/silverstripe-elemental-filelist/pull/11) ([jsirish](https://github.com/jsirish))
+- new travis, scrutinizer, jenkinsfile CI configs [\#10](https://github.com/dynamic/silverstripe-elemental-filelist/pull/10) ([jsirish](https://github.com/jsirish))
+- CMS Design [\#9](https://github.com/dynamic/silverstripe-elemental-filelist/pull/9) ([jsirish](https://github.com/jsirish))
+
+## [2.0.1](https://github.com/dynamic/silverstripe-elemental-filelist/tree/2.0.1) (2019-03-21)
 [Full Changelog](https://github.com/dynamic/silverstripe-elemental-filelist/compare/2.0.0...2.0.1)
 
 **Closed issues:**
