@@ -2,9 +2,14 @@
 
 namespace Dynamic\Elements\FileList\Elements;
 
+use Colymba\BulkUpload\BulkUploader;
 use DNADesign\Elemental\Models\BaseElement;
 use Dynamic\Elements\FileList\Model\FileListObject;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
+use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\ORM\FieldType\DBField;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 class ElementFileList extends BaseElement
 {
@@ -43,13 +48,42 @@ class ElementFileList extends BaseElement
     ];
 
     /**
-     * Set to false to prevent an in-line edit form from showing in an elemental area. Instead the element will be
-     * clickable and a GridFieldDetailForm will be used.
-     *
-     * @config
      * @var bool
      */
     private static $inline_editable = false;
+
+    /**
+     * @return FieldList
+     */
+    public function getCMSFields()
+    {
+        $this->beforeUpdateCMSFields(function (FieldList $fields) {
+            if ($this->ID) {
+                $field = $fields->dataFieldByName('Files');
+                $fields->removeByName('Files');
+
+                $config = $field->getConfig();
+                $config
+                    ->addComponents([
+                        new GridFieldOrderableRows('SortOrder')
+                    ])
+                    ->removeComponentsByType([
+                        GridFieldAddExistingAutocompleter::class,
+                        GridFieldDeleteAction::class
+                    ]);
+                if (class_exists(BulkUploader::class)) {
+                    $config->addComponents([
+                        new BulkUploader()
+                    ]);
+                    $config->getComponentByType(BulkUploader::class)
+                        ->setUfSetup('setFolderName', 'Uploads/FileList');
+                }
+                $fields->addFieldToTab('Root.Main', $field);
+            }
+        });
+
+        return parent::getCMSFields();
+    }
 
     /**
      * @return DBHTMLText

@@ -23,6 +23,7 @@ class FileListObject extends DataObject
      */
     private static $db = [
         'Title' => 'Varchar(255)',
+        'SortOrder' => "Int",
     ];
 
     /**
@@ -33,8 +34,19 @@ class FileListObject extends DataObject
         'File' => File::class,
     ];
 
+    /**
+     * @var array
+     */
     private static $owns = [
         'File',
+    ];
+
+    /**
+     * @var array
+     */
+    private static $summary_fields = [
+        'File.Name' => 'File',
+        'Title',
     ];
 
     /**
@@ -51,6 +63,7 @@ class FileListObject extends DataObject
 
         $fields->removeByName([
             'FileListID',
+            'SortOrder',
         ]);
 
         return $fields;
