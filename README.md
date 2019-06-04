@@ -18,6 +18,10 @@ A multi file block for SilverStripe Elemental.
 - silverstripe/recipe-cms: ^4@dev
 - dnadesign/silverstripe-elemental: ^4@dev
 
+#### Optional
+
+* colymba/gridfield-bulk-editing-tools ^3.0
+
 ## Installation
 
 `composer require dynamic/silverstripe-elemental-filelist`
