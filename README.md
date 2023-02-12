@@ -1,4 +1,4 @@
-# Silverstripe Elemental FileList
+# Silverstripe Elemental File List
 
 A multi file block for SilverStripe Elemental.
 
@@ -12,8 +12,8 @@ A multi file block for SilverStripe Elemental.
 
 ## Requirements
 
-* Silverstripe ^4.0
-* Silverstripe Elemental ^4.0
+* Silverstripe ^5.0
+* Silverstripe Elemental ^5.0
 
 #### Optional
 
