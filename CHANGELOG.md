@@ -1,5 +1,22 @@
 # Change Log
 
+## [3.0.0-alpha1](https://github.com/dynamic/silverstripe-elemental-filelist/tree/3.0.0-alpha1) (2023-02-012)
+* REFACTOR migrate phpunit config by @jsirish in https://github.com/dynamic/silverstripe-elemental-filelist/pull/22
+* REFACTOR Allow Elemental 5 by @jsirish in https://github.com/dynamic/silverstripe-elemental-filelist/pull/21
+* README Update requirements by @jsirish in https://github.com/dynamic/silverstripe-elemental-filelist/pull/23
+
+
+**Full Changelog**: https://github.com/dynamic/silverstripe-elemental-filelist/compare/2.0.3...3.0.0-alpha1
+
+## [2.0.3](https://github.com/dynamic/silverstripe-elemental-filelist/tree/2.0.3) (2022-12-05)
+
+* CI workflow adjustments by @jsirish in https://github.com/dynamic/silverstripe-elemental-filelist/pull/18
+* README cleanup by @jsirish in https://github.com/dynamic/silverstripe-elemental-filelist/pull/19
+* FEATURE default Bootstrap template by @jsirish in https://github.com/dynamic/silverstripe-elemental-filelist/pull/20
+
+
+**Full Changelog**: https://github.com/dynamic/silverstripe-elemental-filelist/compare/2.0.2...2.0.3
+
 ## [2.0.2](https://github.com/dynamic/silverstripe-elemental-filelist/tree/2.0.2) (2019-06-03)
 [Full Changelog](https://github.com/dynamic/silverstripe-elemental-filelist/compare/2.0.1...2.0.2)
 

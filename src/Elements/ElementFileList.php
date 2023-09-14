@@ -26,6 +26,13 @@ class ElementFileList extends BaseElement
     /**
      * @var array
      */
+    private static $db = [
+        'Content' => 'HTMLText',
+    ];
+
+    /**
+     * @var array
+     */
     private static $has_many = [
         'Files' => FileListObject::class,
     ];
@@ -61,6 +68,9 @@ class ElementFileList extends BaseElement
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
+            $fields->dataFieldByName('Content')
+                ->setRows(8);
+
             if ($this->ID) {
                 $field = $fields->dataFieldByName('Files');
                 $fields->removeByName('Files');

@@ -24,6 +24,7 @@ class FileListObject extends DataObject
      */
     private static $db = [
         'Title' => 'Varchar(255)',
+        'Content' => 'HTMLText',
         'SortOrder' => "Int",
     ];
 
