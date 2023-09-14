@@ -11,9 +11,9 @@
                             <h4 class="mb-1">
                                 <i class="bi
                                     <% if $File.Extension == pdf %> bi-file-pdf
-                                    <% else_if $File.Extension == doc || $File.Extension == docx %> filetype-docx
-                                    <% else_if $File.Extension == xls || $File.Extension == xlsx %> filetype-xlsx
-                                    <% else_if $File.Extension == ppt || $File.Extension == pptx %> filetype-pptx
+                                    <% else_if $File.Extension == doc || $File.Extension == docx %> bi-filetype-docx
+                                    <% else_if $File.Extension == xls || $File.Extension == xlsx %> bi-filetype-xlsx
+                                    <% else_if $File.Extension == ppt || $File.Extension == pptx %> bi-filetype-pptx
                                     <% else %> bi-cloud-download<% end_if %>"></i>
                                 $Title
                             </h4>
